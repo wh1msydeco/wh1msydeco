@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wh1msydeco — Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="page admin-page">
+    <h1>wh1msydeco — Admin</h1>
+
+    <div class="admin-card" id="login-section">
+      <p>Introduce la contraseña de administración para exportar participantes.</p>
+      <input class="admin-input" type="password" id="admin-password" placeholder="Contraseña">
+      <button class="admin-btn" id="login-btn" type="button">Acceder</button>
+      <p class="error-msg" id="admin-error"></p>
+    </div>
+
+    <div class="admin-card" id="export-section" hidden>
+      <div class="admin-stats" id="admin-stats"></div>
+      <button class="admin-btn" id="export-toploader" type="button">Descargar toploader_participants.txt</button>
+      <button class="admin-btn" id="export-keychain" type="button">Descargar keychain_participants.txt</button>
+    </div>
+  </main>
+
+  <script>
+    let adminPassword = '';
+
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      adminPassword = document.getElementById('admin-password').value;
+      const errorEl = document.getElementById('admin-error');
+
+      try {
+        const res = await fetch(`/api/stats?password=${encodeURIComponent(adminPassword)}`);
+        if (!res.ok) {
+          errorEl.textContent = 'Contraseña incorrecta.';
+          return;
+        }
+
+        const stats = await res.json();
+        document.getElementById('login-section').hidden = true;
+        document.getElementById('export-section').hidden = false;
+        document.getElementById('admin-stats').innerHTML =
+          `<strong>Total:</strong> ${stats.total} participantes<br>` +
+          `<strong>Toploader:</strong> ${stats.toploader}<br>` +
+          `<strong>Keychain/Llavero:</strong> ${stats.keychain}<br>` +
+          `<strong>Estado:</strong> ${stats.open ? 'Abierto' : 'Cerrado'}`;
+      } catch {
+        errorEl.textContent = 'Error de conexión.';
+      }
+    });
+
+    function downloadExport(type) {
+      window.location.href = `/api/export/${type}?password=${encodeURIComponent(adminPassword)}`;
+    }
+
+    document.getElementById('export-toploader').addEventListener('click', () => downloadExport('toploader'));
+    document.getElementById('export-keychain').addEventListener('click', () => downloadExport('keychain'));
+  </script>
+</body>
+</html>
