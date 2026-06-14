@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wh1msydeco — Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page admin-page">
+    <h1>wh1msydeco — Exportar participantes</h1>
+
+    <div class="admin-card">
+      <p>Los registros se guardan en <strong>Supabase</strong>. Para exportar los usuarios:</p>
+      <ol>
+        <li>Entra en tu proyecto de Supabase.</li>
+        <li>Ve a <strong>Table Editor</strong> → tabla <code>registrations</code>.</li>
+        <li>Filtra por <code>toploader = true</code> o <code>keychain = true</code>.</li>
+        <li>Pulsa <strong>Export</strong> → CSV y copia la columna <code>username</code>.</li>
+      </ol>
+      <p>O usa el <strong>SQL Editor</strong> con estas consultas:</p>
+      <pre class="admin-sql">-- Toploader
+select username from registrations where toploader = true order by username;
+
+-- Keychain / Llavero
+select username from registrations where keychain = true order by username;</pre>
+      <p><a class="social-link" href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer">Abrir Supabase Dashboard →</a></p>
+    </div>
+  </main>
+</body>
+</html>

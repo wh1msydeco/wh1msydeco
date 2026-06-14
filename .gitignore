@@ -1,3 +1,4 @@
 node_modules/
 .env
 data/registrations.json
+docs/js/config.js
