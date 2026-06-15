@@ -62,7 +62,7 @@ const translations = {
     registerNote: 'Nota: Toda la información recopilada será usada sólo para el sorteo.',
     successTitle: '¡Registro completado!',
     successP1: 'Por favor espera los resultados del sorteo.',
-    successP2: 'Podrías ser uno de los cinco ganadores ി ˉ͈̀꒳ˉ͈́ )✧',
+    successP2: 'Podrías ser uno de los cinco ganadores ദ്ദി ˉ͈̀꒳ˉ͈́ )✧',
     goodLuck: '¡¡¡¡¡¡¡¡¡¡¡¡MUCHA SUERTE!!!!!!!!!',
     countdownLabel: 'Tiempo restante para apuntarte al sorteo:',
     countdownEnded: '¡El sorteo ha terminado!',

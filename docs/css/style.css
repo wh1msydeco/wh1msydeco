@@ -238,15 +238,25 @@ h1 {
   line-height: 0;
 }
 
-.frame-heart {
+.frame-star {
   position: absolute;
-  top: -10px;
-  right: -8px;
-  font-size: 1.1rem;
-  color: var(--green);
-  transform: rotate(12deg);
+  top: -11px;
+  right: 10px;
+  width: 1.55rem;
+  height: 1.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: var(--yellow);
+  background: #fff;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  box-shadow: 1px 2px 0 rgba(77, 57, 46, 0.18);
+  transform: rotate(10deg);
   line-height: 1;
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .image-frame::before,
