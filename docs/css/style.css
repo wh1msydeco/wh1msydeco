@@ -243,15 +243,22 @@ h1 {
 }
 
 .image-frame::after {
-  content: '☆';
+  content: '★';
   position: absolute;
-  top: -9px;
-  right: -7px;
-  font-size: 1.05rem;
+  top: -13px;
+  right: -11px;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
   line-height: 1;
-  color: var(--green);
-  transform: rotate(12deg);
-  filter: drop-shadow(0 0 1px #fff) drop-shadow(1px 1px 0 #fff);
+  color: var(--yellow);
+  background: #fff;
+  border: 2.5px solid var(--green);
+  border-radius: 50%;
+  box-shadow: 2px 2px 0 rgba(77, 57, 46, 0.2);
+  transform: rotate(14deg);
   z-index: 3;
   pointer-events: none;
   animation: frame-star-wiggle 3.2s ease-in-out infinite;
@@ -260,11 +267,11 @@ h1 {
 @keyframes frame-star-wiggle {
   0%,
   100% {
-    transform: rotate(12deg);
+    transform: rotate(14deg);
   }
 
   50% {
-    transform: rotate(6deg) scale(1.06);
+    transform: rotate(8deg) scale(1.05);
   }
 }
 
@@ -898,9 +905,11 @@ h1 {
   }
 
   .image-frame::after {
-    top: -8px;
-    right: -6px;
-    font-size: 0.95rem;
+    top: -11px;
+    right: -9px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.88rem;
   }
 
   .hero-image {
