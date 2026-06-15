@@ -240,23 +240,27 @@ h1 {
 
 .frame-star {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 1.4rem;
-  height: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.78rem;
-  color: var(--yellow);
-  background: #fff;
-  border: 2px solid var(--green);
-  border-radius: 50%;
-  box-shadow: 1px 2px 0 rgba(77, 57, 46, 0.2);
-  transform: translate(38%, -38%) rotate(12deg);
+  top: calc(-0.45rem - 3px);
+  right: calc(-0.45rem - 3px);
+  font-size: 1.1rem;
   line-height: 1;
+  color: var(--green);
+  transform: translate(50%, -50%) rotate(14deg);
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #fff);
   z-index: 3;
   pointer-events: none;
+  animation: frame-star-wiggle 3.2s ease-in-out infinite;
+}
+
+@keyframes frame-star-wiggle {
+  0%,
+  100% {
+    transform: translate(50%, -50%) rotate(14deg);
+  }
+
+  50% {
+    transform: translate(50%, -50%) rotate(8deg) scale(1.08);
+  }
 }
 
 .image-frame::before,
@@ -894,10 +898,9 @@ h1 {
   }
 
   .frame-star {
-    width: 1.25rem;
-    height: 1.25rem;
-    font-size: 0.7rem;
-    transform: translate(36%, -36%) rotate(12deg);
+    top: calc(-0.4rem - 3px);
+    right: calc(-0.4rem - 3px);
+    font-size: 1rem;
   }
 
   .hero-image {
