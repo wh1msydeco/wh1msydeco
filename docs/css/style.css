@@ -222,73 +222,77 @@ h1 {
   opacity: 0.75;
 }
 
-/* Transparent PNG images */
 .image-frame {
   position: relative;
-  width: fit-content;
-  max-width: 340px;
-  margin: 0 auto 1.2rem;
+  max-width: 360px;
+  margin: 0 auto 1.6rem;
+
+  /* suave inclinación cute */
+  transform: rotate(-0.8deg);
+  transition: transform 0.35s ease;
 }
 
-/* glow cute de fondo */
+/* ✨ marco principal cute (tipo sticker) */
 .image-frame::before {
   content: '';
   position: absolute;
-  inset: -10% -8% -12% -8%;
-  background: radial-gradient(
-    circle,
-    rgba(247, 200, 19, 0.28),
-    rgba(21, 135, 73, 0.10) 55%,
-    transparent 70%
+  inset: -10px;
+
+  background: linear-gradient(
+    135deg,
+    #fffdf8,
+    #ffffff
   );
-  border-radius: 40px;
+
+  border-radius: 30px;
+
+  /* sombra suave, nada agresivo */
+  box-shadow:
+    0 12px 30px rgba(77, 57, 46, 0.12),
+    0 2px 0 rgba(118, 79, 30, 0.08);
+
+  border: 2px solid rgba(247, 200, 19, 0.25);
+
   z-index: -1;
-  filter: blur(2px);
 }
 
-/* corazoncito */
+/* 💕 borde interior decorativo */
 .image-frame::after {
-  content: '♡';
+  content: '';
   position: absolute;
-  top: -8px;
-  right: -6px;
-  font-size: 1.2rem;
-  color: var(--green);
-  transform: rotate(12deg);
-  animation: wiggle 3s ease-in-out infinite;
-  z-index: 2;
+  inset: -4px;
+
+  border-radius: 26px;
+
+  border: 2px dashed rgba(21, 135, 73, 0.28);
+
+  opacity: 0.7;
+
+  pointer-events: none;
 }
 
-/* 💥 ESTE ES EL CAMBIO IMPORTANTE */
+/* 📸 imagen */
 .hero-image {
   display: block;
   width: 100%;
-  height: auto;
 
-  border-radius: 26px;
+  border-radius: 22px;
 
-  transform: rotate(-2deg);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-
+  /* sombra suave realista */
   box-shadow:
-    0 22px 55px rgba(77, 57, 46, 0.18),
-    0 6px 14px rgba(0, 0, 0, 0.06);
+    0 10px 20px rgba(0, 0, 0, 0.10);
+
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-/* hover más vivo */
+/* ✨ hover cute */
+.image-frame:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
 .image-frame:hover .hero-image {
-  transform: rotate(0deg) scale(1.06);
-  box-shadow:
-    0 30px 80px rgba(77, 57, 46, 0.22),
-    0 8px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* imagen interna (IMPORTANTE si existe <img>) */
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 26px;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.02);
 }
 
 .character-wrap {
