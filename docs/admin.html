@@ -3,28 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf9f1">
   <title>wh1msydeco — Admin</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9C%BF</text></svg>">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="sparkles" aria-hidden="true">
+    <span class="sparkle sparkle--1">✦</span>
+    <span class="sparkle sparkle--2">♡</span>
+    <span class="sparkle sparkle--3">✧</span>
+    <span class="sparkle sparkle--4">★</span>
+  </div>
   <main class="page admin-page">
-    <h1>wh1msydeco — Exportar participantes</h1>
+    <div class="card">
+      <p class="site-header">✿ wh1msydeco ✿</p>
+      <h1>Exportar participantes</h1>
 
-    <div class="admin-card">
-      <p>Los registros se guardan en <strong>Supabase</strong>. Para exportar los usuarios:</p>
-      <ol>
-        <li>Entra en tu proyecto de Supabase.</li>
-        <li>Ve a <strong>Table Editor</strong> → tabla <code>registrations</code>.</li>
-        <li>Filtra por <code>toploader = true</code> o <code>keychain = true</code>.</li>
-        <li>Pulsa <strong>Export</strong> → CSV y copia la columna <code>username</code>.</li>
-      </ol>
-      <p>O usa el <strong>SQL Editor</strong> con estas consultas:</p>
-      <pre class="admin-sql">-- Toploader
+      <div class="admin-card">
+        <p>Los registros se guardan en <strong>Supabase</strong>. Para exportar los usuarios:</p>
+        <ol>
+          <li>Entra en tu proyecto de Supabase.</li>
+          <li>Ve a <strong>Table Editor</strong> → tabla <code>registrations</code>.</li>
+          <li>Filtra por <code>toploader = true</code> o <code>keychain = true</code>.</li>
+          <li>Pulsa <strong>Export</strong> → CSV y copia la columna <code>username</code>.</li>
+        </ol>
+        <p>O usa el <strong>SQL Editor</strong> con estas consultas:</p>
+        <pre class="admin-sql">-- Toploader
 select username from registrations where toploader = true order by username;
 
 -- Keychain / Llavero
 select username from registrations where keychain = true order by username;</pre>
-      <p><a class="social-link" href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer">Abrir Supabase Dashboard →</a></p>
+        <p><a class="social-link" href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer">Abrir Supabase Dashboard →</a></p>
+      </div>
     </div>
   </main>
 </body>
