@@ -226,46 +226,69 @@ h1 {
 .image-frame {
   position: relative;
   width: fit-content;
+  max-width: 340px;
   margin: 0 auto 1.2rem;
 }
 
+/* glow cute de fondo */
 .image-frame::before {
   content: '';
   position: absolute;
-  inset: 8% 5% -8% 5%;
-  background: radial-gradient(circle, rgba(247, 200, 19, 0.35), rgba(21, 135, 73, 0.08) 55%, transparent 72%);
-  border-radius: 50%;
+  inset: -10% -8% -12% -8%;
+  background: radial-gradient(
+    circle,
+    rgba(247, 200, 19, 0.28),
+    rgba(21, 135, 73, 0.10) 55%,
+    transparent 70%
+  );
+  border-radius: 40px;
   z-index: -1;
+  filter: blur(2px);
 }
 
+/* corazoncito */
 .image-frame::after {
   content: '♡';
   position: absolute;
-  top: -6px;
-  right: -2px;
-  font-size: 1.15rem;
+  top: -8px;
+  right: -6px;
+  font-size: 1.2rem;
   color: var(--green);
-  transform: rotate(14deg);
+  transform: rotate(12deg);
   animation: wiggle 3s ease-in-out infinite;
+  z-index: 2;
 }
 
+/* 💥 ESTE ES EL CAMBIO IMPORTANTE */
 .hero-image {
   display: block;
-  max-width: 270px;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  filter: drop-shadow(0 10px 18px rgba(77, 57, 46, 0.18));
-  transform: rotate(-1.5deg);
-  transition: transform 0.3s ease;
+  height: auto;
+
+  border-radius: 26px;
+
+  transform: rotate(-2deg);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  box-shadow:
+    0 22px 55px rgba(77, 57, 46, 0.18),
+    0 6px 14px rgba(0, 0, 0, 0.06);
 }
 
+/* hover más vivo */
 .image-frame:hover .hero-image {
-  transform: rotate(0deg) scale(1.03);
+  transform: rotate(0deg) scale(1.06);
+  box-shadow:
+    0 30px 80px rgba(77, 57, 46, 0.22),
+    0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* imagen interna (IMPORTANTE si existe <img>) */
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 26px;
 }
 
 .character-wrap {
