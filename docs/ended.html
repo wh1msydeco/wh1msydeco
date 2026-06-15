@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="sparkles" aria-hidden="true">
+    <span class="sparkle sparkle--1">✦</span>
+    <span class="sparkle sparkle--2">♡</span>
+    <span class="sparkle sparkle--3">✧</span>
+    <span class="sparkle sparkle--4">★</span>
+    <span class="sparkle sparkle--5">·</span>
+    <span class="sparkle sparkle--6">✿</span>
+  </div>
   <main class="page">
+    <div class="card">
+    <p class="site-header">✿ wh1msydeco ✿</p>
     <div class="lang-bar">
       <span class="lang-hint" data-i18n="langHint">Puedes cambiar el idioma aquí ♡</span>
       <div class="lang-toggle">
@@ -18,11 +28,13 @@
 
     <p class="ended-icon">🐻</p>
     <h1 class="ended-title" data-i18n="endedTitle">El sorteo ya ha terminado</h1>
-    <p class="text-block" data-i18n="endedText">
+    <p class="text-block text-center" data-i18n="endedText">
       ¡Gracias por tu interés! El registro ya está cerrado. Estate atento a mis stories para ver los resultados.
     </p>
 
-    <img class="character-image" src="images/rilakkuma-success.png" alt="Rilakkuma">
+    <div class="character-wrap">
+      <img class="character-image" src="images/rilakkuma-success.png" alt="Rilakkuma">
+    </div>
 
     <footer class="footer">
       <div class="social-links">
@@ -40,6 +52,7 @@
         </a>
       </div>
     </footer>
+    </div>
   </main>
 
   <script src="js/i18n.js"></script>

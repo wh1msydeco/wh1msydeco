@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="sparkles" aria-hidden="true">
+    <span class="sparkle sparkle--1">✦</span>
+    <span class="sparkle sparkle--2">♡</span>
+    <span class="sparkle sparkle--3">✧</span>
+    <span class="sparkle sparkle--4">★</span>
+    <span class="sparkle sparkle--5">·</span>
+    <span class="sparkle sparkle--6">✿</span>
+  </div>
   <main class="page">
+    <div class="card">
+    <p class="site-header">✿ wh1msydeco ✿</p>
     <div class="lang-bar">
       <span class="lang-hint" data-i18n="langHint">Puedes cambiar el idioma aquí ♡</span>
       <div class="lang-toggle">
@@ -16,11 +26,14 @@
       </div>
     </div>
 
+    <p class="success-badge">(◜ᴗ◝)♡</p>
     <p class="success-title" data-i18n="successTitle">¡Registro completado!</p>
     <p class="success-text" data-i18n="successP1">Por favor espera los resultados del sorteo.</p>
     <p class="success-text" data-i18n="successP2">Podrías ser uno de los cinco ganadores ി ˉ͈̀꒳ˉ͈́ )✧</p>
 
-    <img class="character-image" src="images/rilakkuma-success.png" alt="Rilakkuma">
+    <div class="character-wrap">
+      <img class="character-image" src="images/rilakkuma-success.png" alt="Rilakkuma">
+    </div>
 
     <p class="good-luck" data-i18n="goodLuck">¡¡¡¡¡¡¡¡¡¡¡¡MUCHA SUERTE!!!!!!!!!</p>
 
@@ -44,10 +57,12 @@
         </a>
       </div>
     </footer>
+    </div>
   </main>
 
   <script src="js/config.js"></script>
   <script src="js/supabase-client.js"></script>
   <script src="js/i18n.js"></script>
-  <script src="js/countdown.js"></script></body>
+  <script src="js/countdown.js"></script>
+</body>
 </html>
