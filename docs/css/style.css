@@ -224,30 +224,32 @@ h1 {
 
 .image-frame {
   position: relative;
-  width: fit-content;
-  max-width: calc(100% - 1rem);
+  display: block;
+  width: max-content;
+  max-width: 100%;
   margin: 0 auto 1.35rem;
-  padding: 0.55rem;
+  padding: 0.45rem;
   background: #fff;
   border: 3px solid var(--dark-brown);
-  border-radius: 16px;
-  box-shadow: 4px 4px 0 var(--yellow);
-  transform: rotate(-1.5deg);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 var(--yellow);
+  transform: rotate(-1.2deg);
   transition: transform 0.3s ease;
+  line-height: 0;
 }
 
-.image-frame::before {
-  content: '♡';
+.frame-heart {
   position: absolute;
-  top: -11px;
-  right: -7px;
-  font-size: 1.15rem;
+  top: -10px;
+  right: -8px;
+  font-size: 1.1rem;
   color: var(--green);
   transform: rotate(12deg);
+  line-height: 1;
   z-index: 2;
-  text-shadow: 0 0 0 #fff;
 }
 
+.image-frame::before,
 .image-frame::after {
   display: none;
 }
@@ -258,14 +260,14 @@ h1 {
 
 .hero-image {
   display: block;
-  width: min(260px, 100%);
-  max-width: 100%;
+  width: auto;
+  max-width: min(235px, 72vw);
   height: auto;
   margin: 0;
   padding: 0;
   background: transparent;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: none;
   filter: none;
   transform: none;
@@ -860,13 +862,14 @@ h1 {
   }
 
   .image-frame {
-    transform: rotate(-1deg);
-    padding: 0.45rem;
+    transform: rotate(-0.8deg);
+    padding: 0.4rem;
     margin-bottom: 1.1rem;
+    box-shadow: 4px 4px 0 var(--yellow);
   }
 
   .hero-image {
-    width: min(220px, 100%);
+    max-width: min(210px, 68vw);
   }
 
   .options-group {
