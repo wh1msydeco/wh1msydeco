@@ -245,8 +245,8 @@ h1 {
 .image-frame::after {
   content: '★';
   position: absolute;
-  top: -13px;
-  right: -11px;
+  top: -18px;
+  right: -15px;
   width: 1.7rem;
   height: 1.7rem;
   display: grid;
@@ -258,7 +258,8 @@ h1 {
   border: 2.5px solid var(--green);
   border-radius: 50%;
   box-shadow: 2px 2px 0 rgba(77, 57, 46, 0.2);
-  transform: rotate(14deg);
+  transform: rotate(18deg);
+  transform-origin: center center;
   z-index: 3;
   pointer-events: none;
   animation: frame-star-wiggle 3.2s ease-in-out infinite;
@@ -267,11 +268,11 @@ h1 {
 @keyframes frame-star-wiggle {
   0%,
   100% {
-    transform: rotate(14deg);
+    transform: rotate(18deg);
   }
 
   50% {
-    transform: rotate(8deg) scale(1.05);
+    transform: rotate(12deg) scale(1.05);
   }
 }
 
@@ -905,8 +906,8 @@ h1 {
   }
 
   .image-frame::after {
-    top: -11px;
-    right: -9px;
+    top: -15px;
+    right: -12px;
     width: 1.5rem;
     height: 1.5rem;
     font-size: 0.88rem;
