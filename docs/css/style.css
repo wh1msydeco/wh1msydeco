@@ -307,10 +307,13 @@ h1 {
 .gif-stage {
   display: inline-block;
   max-width: 100%;
-  padding: 0.4rem;
-  background: #fff;
+  padding: 0.65rem 0.75rem 0.55rem;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(247, 200, 19, 0.22), transparent 55%),
+    radial-gradient(circle at 70% 80%, rgba(21, 135, 73, 0.1), transparent 50%),
+    #fffdf8;
   border: 3px solid var(--dark-brown);
-  border-radius: 20px;
+  border-radius: 22px;
   box-shadow: 4px 4px 0 var(--yellow);
   transform: rotate(0.8deg);
 }
@@ -321,8 +324,19 @@ h1 {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  border-radius: 14px;
+  border-radius: 0;
   image-rendering: auto;
+  filter: drop-shadow(0 5px 10px rgba(77, 57, 46, 0.14));
+  transition: opacity 0.2s ease, transform 0.28s ease;
+}
+
+.character-gif.is-switching {
+  opacity: 0.45;
+  transform: scale(0.96);
+}
+
+.character-gif.is-pop {
+  transform: scale(1.04);
 }
 
 .character-wrap--large .character-gif {
@@ -344,6 +358,7 @@ h1 {
   height: auto;
   opacity: 0.95;
   filter: drop-shadow(0 4px 8px rgba(77, 57, 46, 0.12));
+  background: transparent;
 }
 
 .character-image {

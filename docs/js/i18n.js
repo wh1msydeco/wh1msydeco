@@ -103,6 +103,10 @@ function applyTranslations() {
     }
   });
 
+  document.querySelectorAll('[data-error-key]').forEach((el) => {
+    el.textContent = t(el.dataset.errorKey);
+  });
+
   document.documentElement.lang = currentLang;
 }
 
