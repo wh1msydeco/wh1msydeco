@@ -238,15 +238,20 @@ h1 {
   line-height: 0;
 }
 
-.frame-star {
+.image-frame::before {
+  display: none;
+}
+
+.image-frame::after {
+  content: '☆';
   position: absolute;
-  top: calc(-0.45rem - 3px);
-  right: calc(-0.45rem - 3px);
-  font-size: 1.1rem;
+  top: -9px;
+  right: -7px;
+  font-size: 1.05rem;
   line-height: 1;
   color: var(--green);
-  transform: translate(50%, -50%) rotate(14deg);
-  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #fff);
+  transform: rotate(12deg);
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(1px 1px 0 #fff);
   z-index: 3;
   pointer-events: none;
   animation: frame-star-wiggle 3.2s ease-in-out infinite;
@@ -255,17 +260,12 @@ h1 {
 @keyframes frame-star-wiggle {
   0%,
   100% {
-    transform: translate(50%, -50%) rotate(14deg);
+    transform: rotate(12deg);
   }
 
   50% {
-    transform: translate(50%, -50%) rotate(8deg) scale(1.08);
+    transform: rotate(6deg) scale(1.06);
   }
-}
-
-.image-frame::before,
-.image-frame::after {
-  display: none;
 }
 
 .image-deco {
@@ -897,10 +897,10 @@ h1 {
     box-shadow: 4px 4px 0 var(--yellow);
   }
 
-  .frame-star {
-    top: calc(-0.4rem - 3px);
-    right: calc(-0.4rem - 3px);
-    font-size: 1rem;
+  .image-frame::after {
+    top: -8px;
+    right: -6px;
+    font-size: 0.95rem;
   }
 
   .hero-image {
