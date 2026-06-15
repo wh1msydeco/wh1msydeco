@@ -405,7 +405,7 @@ h1 {
 }
 
 .cta-box::before {
-  content: '♡ ';
+  content: '☆ ';
   color: var(--green);
 }
 
@@ -670,7 +670,7 @@ h1 {
 }
 
 .footer::before {
-  content: '· · ♡ · ·';
+  content: '· · ☆ · ·';
   display: block;
   margin-bottom: 0.95rem;
   color: var(--brown);

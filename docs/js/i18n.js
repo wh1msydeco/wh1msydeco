@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    langHint: 'You can switch the language here ♡',
+    langHint: 'You can switch the language here ☆',
     introGreeting: 'Hi applehead! 🍎',
     introP1: "If you're here, it's because you want to enter the drawing for a custom commission.",
     introHow: "Here's how it works:",
@@ -39,7 +39,7 @@ const translations = {
     tiktok: 'TikTok',
   },
   es: {
-    langHint: 'Puedes cambiar el idioma aquí ♡',
+    langHint: 'Puedes cambiar el idioma aquí ☆',
     introGreeting: '¡Hola applehead! 🍎',
     introP1: 'Si estás aquí dentro es porque quieres participar en el sorteo para conseguir una comisión.',
     introHow: 'Te explico como funciona:',
