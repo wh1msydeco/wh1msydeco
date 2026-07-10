@@ -64,6 +64,13 @@
     </div>
   </main>
 
+  <script src="js/config.js?v=20260711-1300"></script>
+  <script src="js/supabase-client.js?v=20260711-1300"></script>
+  <script>
+    if (typeof getRafflePhase === 'function' && getRafflePhase() !== 'closed') {
+      window.location.replace('index.html?v=20260711-1300');
+    }
+  </script>
   <script src="js/i18n.js"></script>
 </body>
 </html>
