@@ -724,6 +724,79 @@ h1 {
   letter-spacing: 0.06em;
 }
 
+.card--countdown {
+  overflow: hidden;
+}
+
+.countdown-hero {
+  position: relative;
+  text-align: center;
+  margin: 0.2rem auto 1.15rem;
+  padding: 1rem 0.8rem 0.85rem;
+  background:
+    linear-gradient(135deg, rgba(247, 200, 19, 0.28), rgba(255, 255, 255, 0.78) 45%, rgba(21, 135, 73, 0.12)),
+    #fff;
+  border: 2px dashed rgba(118, 79, 30, 0.45);
+  border-radius: var(--radius-md);
+}
+
+.countdown-hero::after {
+  content: '☆';
+  position: absolute;
+  right: 1rem;
+  top: -0.65rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  background: #fff;
+  border: 2px solid var(--dark-brown);
+  border-radius: 50%;
+  box-shadow: 2px 2px 0 var(--yellow);
+  animation: wiggle 2.8s ease-in-out infinite;
+}
+
+.countdown-kicker {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.2rem 0.75rem;
+  color: var(--green);
+  background: rgba(21, 135, 73, 0.12);
+  border: 1px solid rgba(21, 135, 73, 0.28);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.countdown-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.countdown-copy {
+  max-width: 34ch;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  color: var(--brown);
+}
+
+.countdown--featured {
+  margin: 1rem auto 1.2rem;
+  padding: 1.05rem 0.9rem;
+  border-width: 3px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(244, 167, 167, 0.2), transparent 35%),
+    linear-gradient(180deg, #fff, rgba(247, 200, 19, 0.18));
+  box-shadow: 4px 4px 0 rgba(247, 200, 19, 0.65);
+}
+
+.countdown--featured .countdown-timer {
+  font-size: 1.58rem;
+  line-height: 1.25;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
@@ -949,6 +1022,14 @@ h1 {
 
   .countdown-timer {
     font-size: 1.05rem;
+  }
+
+  .countdown-title {
+    font-size: 1.4rem;
+  }
+
+  .countdown--featured .countdown-timer {
+    font-size: 1.18rem;
   }
 
   .good-luck {

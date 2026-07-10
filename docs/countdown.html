@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf9f1">
+  <title>wh1msydeco - Cuenta atras</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%98%85</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="countdown-page">
+  <div class="sparkles" aria-hidden="true">
+    <span class="sparkle sparkle--1">✦</span>
+    <span class="sparkle sparkle--2">☆</span>
+    <span class="sparkle sparkle--3">✧</span>
+    <span class="sparkle sparkle--4">★</span>
+    <span class="sparkle sparkle--5">·</span>
+    <span class="sparkle sparkle--6">☆</span>
+    <span class="sparkle sparkle--7">✦</span>
+    <span class="sparkle sparkle--8">☆</span>
+  </div>
+
+  <div class="lang-float">
+    <span class="lang-float-hint" data-i18n="langHint">Puedes cambiar el idioma aqui ☆</span>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="es" type="button">ES</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="card card--countdown">
+      <p class="site-header">★ wh1msydeco ★</p>
+
+      <div class="countdown-hero">
+        <p class="countdown-kicker">sorteo cutie</p>
+        <h1 class="countdown-title">Cuenta atras</h1>
+        <p class="countdown-copy">
+          El registro abre el 11/07/2026 a las 13:00 y se cierra el 13/07/2026 a las 13:00, hora de Madrid.
+        </p>
+      </div>
+
+      <div class="countdown countdown--featured">
+        <p class="countdown-label" data-i18n="countdownOpensLabel">El registro abre en:</p>
+        <p class="countdown-timer" id="countdown-timer">--</p>
+      </div>
+
+      <div class="character-wrap character-wrap--large">
+        <div class="gif-stage">
+          <img class="character-gif" src="images/gif-register.gif" alt="Rilakkuma esperando">
+        </div>
+      </div>
+
+      <a class="cta-box" href="register.html" data-i18n="ctaBox">Click para entrar en el sorteo</a>
+
+      <footer class="footer">
+        <div class="social-links">
+          <a class="social-link" href="index.html">Volver al inicio</a>
+          <a class="social-link" href="https://www.instagram.com/wh1msydeco/" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="instagram">Instagram</span> @wh1msydeco
+          </a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/countdown.js"></script>
+</body>
+</html>
