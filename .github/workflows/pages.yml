@@ -27,17 +27,20 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          RAFFLE_START_DATE: ${{ vars.RAFFLE_START_DATE }}
           RAFFLE_END_DATE: ${{ vars.RAFFLE_END_DATE }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
             echo "Missing SUPABASE_URL or SUPABASE_ANON_KEY repository secrets."
             exit 1
           fi
-          END_DATE="${RAFFLE_END_DATE:-2026-06-18T23:59:59+02:00}"
+          START_DATE="${RAFFLE_START_DATE:-2026-07-11T13:00:00+02:00}"
+          END_DATE="${RAFFLE_END_DATE:-2026-07-13T13:00:00+02:00}"
           cat > docs/js/config.js <<EOF
           window.SITE_CONFIG = {
             supabaseUrl: '${SUPABASE_URL}',
             supabaseAnonKey: '${SUPABASE_ANON_KEY}',
+            raffleStartDate: '${START_DATE}',
             raffleEndDate: '${END_DATE}',
           };
           EOF
