@@ -4,5 +4,6 @@
 window.SITE_CONFIG = {
   supabaseUrl: 'https://TU-PROYECTO.supabase.co',
   supabaseAnonKey: 'sb_publishable_TU_CLAVE_AQUI',
-  raffleEndDate: '2026-06-18T23:59:59+02:00',
+  raffleStartDate: '2026-07-11T13:00:00+02:00',
+  raffleEndDate: '2026-07-13T13:00:00+02:00',
 };

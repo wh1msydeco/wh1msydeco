@@ -62,8 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
-  if (!isRaffleOpen()) {
+  if (isRaffleClosed()) {
     goTo('ended.html');
+    return;
+  }
+
+  if (isRaffleNotYetOpen()) {
+    goTo('index.html');
     return;
   }
 
@@ -99,8 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!isRaffleOpen()) {
-      setFormError(errorEl, 'errorClosed');
-      setTimeout(() => goTo('ended.html'), 1500);
+      setFormError(errorEl, isRaffleNotYetOpen() ? 'errorNotOpen' : 'errorClosed');
+      if (isRaffleClosed()) {
+        setTimeout(() => goTo('ended.html'), 1500);
+      }
       return;
     }
 
@@ -121,23 +128,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (error) {
         if (error.message.includes('invalid_username')) {
-          errorEl.textContent = t('errorUsername');
+          setFormError(errorEl, 'errorUsername');
           showRegisterErrorGif();
         } else if (error.message.includes('no_option_selected')) {
-          errorEl.textContent = t('errorOptions');
+          setFormError(errorEl, 'errorOptions');
+          showRegisterErrorGif();
+        } else if (error.message.includes('raffle_not_open')) {
+          setFormError(errorEl, 'errorNotOpen');
           showRegisterErrorGif();
         } else if (error.message.includes('raffle_closed')) {
-          errorEl.textContent = t('errorClosed');
+          setFormError(errorEl, 'errorClosed');
           setTimeout(() => goTo('ended.html'), 1500);
         } else {
-          errorEl.textContent = t('errorGeneric');
+          setFormError(errorEl, 'errorGeneric');
         }
         return;
       }
 
       goTo('success.html');
     } catch {
-      errorEl.textContent = t('errorGeneric');
+      setFormError(errorEl, 'errorGeneric');
     } finally {
       submitBtn.disabled = false;
     }

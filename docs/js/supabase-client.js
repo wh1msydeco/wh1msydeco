@@ -9,10 +9,37 @@ function getSupabaseClient() {
   return window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 }
 
-function isRaffleOpen() {
+function getRaffleStartDate() {
+  const start = window.SITE_CONFIG?.raffleStartDate;
+  return start ? new Date(start) : null;
+}
+
+function getRaffleEndDate() {
   const end = window.SITE_CONFIG?.raffleEndDate;
-  if (!end) return true;
-  return Date.now() < new Date(end).getTime();
+  return end ? new Date(end) : null;
+}
+
+function isRaffleNotYetOpen() {
+  const start = getRaffleStartDate();
+  if (!start) return false;
+  return Date.now() < start.getTime();
+}
+
+function isRaffleClosed() {
+  const end = getRaffleEndDate();
+  if (!end) return false;
+  return Date.now() >= end.getTime();
+}
+
+function isRaffleOpen() {
+  if (isRaffleNotYetOpen() || isRaffleClosed()) return false;
+  return true;
+}
+
+function getRafflePhase() {
+  if (isRaffleNotYetOpen()) return 'upcoming';
+  if (isRaffleClosed()) return 'closed';
+  return 'open';
 }
 
 function normalizeUsername(raw) {
